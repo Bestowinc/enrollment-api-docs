@@ -152,18 +152,18 @@ curl -X POST \
   -H 'Accept:application/json' \
   -H 'cache-control: no-cache' \
   -d '{
-	"birth_date": "1980-01-01", 
-	"gender": "male", 
-	"height_feet": 6, 
-	"height_inches": 0, 
-	"state": "TX", 
-	"weight": 180,
-  "address_1": "1000 Main St.",
-  "address_2": "Apt 555",
-  "city": "Austin",
-  "state": "TX",
-  "postal_code": 78701
-  "ssn": "555-55-5555"
+    "birth_date": "1980-01-01", 
+    "gender": "male", 
+    "height_feet": 6, 
+    "height_inches": 0, 
+    "state": "TX", 
+    "weight": 180,
+    "address_1": "1000 Main St.",
+    "address_2": "Apt 555",
+    "city": "Austin",
+    "state": "TX",
+    "postal_code": 78701
+    "ssn": "555-55-5555"
 }
 '
 ```
@@ -236,7 +236,7 @@ curl -X POST \
   -H 'Accept:application/json' \
   -H 'cache-control: no-cache' \
   -d '{
-	  "term": 2,
+    "term": 2,
     "face_value": 50000
 }
 '
@@ -394,7 +394,7 @@ curl -X POST \
   -H 'Accept:application/json' \
   -H 'cache-control: no-cache' \
   -d '{
-	  "card_number": "424242424242",
+    "card_number": "424242424242",
     "card_expiration_date": "02/2020"
     "card_cvc": 123
 }
@@ -479,7 +479,7 @@ curl -X GET \
   -H 'Authorization: 82zZIHeBqUlBtICMX5li' \
   -H 'Content-Type: application/json' \
   -H 'Accept:application/json' \
-  -H 'cache-control: no-cache' \
+  -H 'cache-control: no-cache' 
 '
 ```
 
@@ -608,11 +608,6 @@ The `medical_section` will then be complete.
 
 ## Submitting The Application
 
-When the application has all sections complete and `"state": "ready_to_submit"`, submit the application by calling the endpoint
-
-`POST https://api.hellobestow.com/v2/applications/:application_id/submit` 
-
-
 > Endpoint URL
 
 > **POST https://api.hellobestow.com/v2/applications/:application_id/submit**
@@ -646,6 +641,10 @@ curl -X POST \
   }
 }
 ```
+
+When the application has all sections complete and `"state": "ready_to_submit"`, submit the application by calling the endpoint
+
+`POST https://api.hellobestow.com/v2/applications/:application_id/submit` 
 
 
 ## Follow-up Section
