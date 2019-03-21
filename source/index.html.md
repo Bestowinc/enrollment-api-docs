@@ -455,7 +455,7 @@ The call will receive a JSON object with the `application_id` and the status on 
 
 In this section, the applicant will need to answer between 7 and 20 questions.  The required questions may change depending on the answers the applicant gives.  For example, if an applicant has diabetes, there will be more questions asked to clairfy the conditions around their diabetes.  
 
-When starting the medical section, the API user will send a request for the first question, Bestow will reply with the questions and possible answers, and then the API user will then ask the applicant, submit the answer and receive the next question.  Because of the dynamic nature of the questions, Bestow will give the API user one question at a time until we are done with the section.
+When starting the medical section, the API user will send a request for the first question, Bestow will reply with the question and possible answers, and then the API user will then ask the applicant, submit the answer and receive the next question.  Because of the dynamic nature of the questions, Bestow will give the API user one question at a time until we are done with the section.
 
 The API user will use the following 2 routes:
 
