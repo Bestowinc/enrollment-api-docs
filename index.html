@@ -1,0 +1,893 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#enrollment" class="toc-h1 toc-link" data-title="Enrollment">Enrollment</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#create-application" class="toc-h2 toc-link" data-title="Create Application">Create Application</a>
+                  </li>
+                  <li>
+                    <a href="#personal-section" class="toc-h2 toc-link" data-title="Personal Section">Personal Section</a>
+                  </li>
+                  <li>
+                    <a href="#policy-section" class="toc-h2 toc-link" data-title="Policy Section">Policy Section</a>
+                  </li>
+                  <li>
+                    <a href="#beneficiaries-section" class="toc-h2 toc-link" data-title="Beneficiaries Section">Beneficiaries Section</a>
+                  </li>
+                  <li>
+                    <a href="#billing-section" class="toc-h2 toc-link" data-title="Billing Section">Billing Section</a>
+                  </li>
+                  <li>
+                    <a href="#medical-section" class="toc-h2 toc-link" data-title="Medical Section">Medical Section</a>
+                  </li>
+                  <li>
+                    <a href="#lifestyle-section" class="toc-h2 toc-link" data-title="Lifestyle Section">Lifestyle Section</a>
+                  </li>
+                  <li>
+                    <a href="#submitting-the-application" class="toc-h2 toc-link" data-title="Submitting The Application">Submitting The Application</a>
+                  </li>
+                  <li>
+                    <a href="#follow-up-section" class="toc-h2 toc-link" data-title="Follow-up Section">Follow-up Section</a>
+                  </li>
+                  <li>
+                    <a href="#outstanding-questions-for-internal-discussion" class="toc-h2 toc-link" data-title="Outstanding Questions (for internal discussion)">Outstanding Questions (for internal discussion)</a>
+                  </li>
+              </ul>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='jake@bestow.co'>Sign Up for a Developer Key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Bestow Entrollment API. Users of the API can create policies for Bestow life insurance products by creating an application, completing all sections, and submitting payment information.</p>
+<h1 id='authentication'>Authentication</h1>
+<blockquote>
+<p>To authorize, use this code:</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>Make sure to replace <code>82zZIHeBqUlBtICMX5li</code> with your API key.</p>
+</blockquote>
+
+<p>Bestow uses API keys to allow access to the API. You can request a new Bestow API key by sending an <a href="mailto:jake@bestow.co">email to us</a>. </p>
+
+<p>Bestow expects for the API key to be included in all API requests to the server in a header that looks like the following:</p>
+
+<p><code>Authorization: 82zZIHeBqUlBtICMX5li</code></p>
+
+<aside class="notice">
+You must replace <code>82zZIHeBqUlBtICMX5li</code> with your personal API key.
+</aside>
+<h1 id='enrollment'>Enrollment</h1>
+<p>In order to get a customer enrolled for life insurance at Bestow, first you must create an application.  The application has 7 sections that need to be completed before it can be submitted.</p>
+
+<p>The sections are: </p>
+
+<ol>
+<li>Personal - name, age, gender, SSN, etc</li>
+<li>Policy - term of the life insurance policy and its face value</li>
+<li>Medical - questions about medical history (i.e. history with diabetes, stroke, etc)</li>
+<li>Lifestyle - question about lifestyle (i.e. smoking, travel plans, citizenship, etc)</li>
+<li>Beneficiaries - information about the applicant&#39;s beneficiaries</li>
+<li>Billing - credit card information</li>
+<li>Follow-up - after the application is submitted, there may be additional follow-up questions.</li>
+</ol>
+<h2 id='create-application'>Create Application</h2>
+<p><code>POST https://api.hellobestow.com/v2/applications</code></p>
+
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>You will create an application by passing the API a POST request.</p>
+<h3 id='query-parameters'>Query Parameters</h3>
+<p>None</p>
+<h3 id='return-values'>Return values</h3>
+<p>The call will receive a JSON object with the <code>application_id</code> and the status on the completed sections.  If a completed section is <code>false</code>, it will need to be completed before <code>state</code> will be go from <code>imcomplete</code> to <code>ready_to_submit</code>.</p>
+<h3 id='getting-the-current-application-state'>Getting the current application state</h3>
+<p>You can query the application at any time by calling</p>
+
+<p><code>GET https://api.hellobestow.com/v2/applications/:application_id</code></p>
+
+<p>which will return the same JSON object.</p>
+<h2 id='personal-section'>Personal Section</h2>
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/personal_section</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/:application_id/personal_section <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "birth_date": "1980-01-01", 
+    "gender": "male", 
+    "height_feet": 6, 
+    "height_inches": 0, 
+    "state": "TX", 
+    "weight": 180,
+    "address_1": "1000 Main St.",
+    "address_2": "Apt 555",
+    "city": "Austin",
+    "state": "TX",
+    "postal_code": 78701
+    "ssn": "555-55-5555"
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/personal_section</code></p>
+
+<p>In this section, you will use the <code>application_id</code> and submit personal information for the applicant, including name, birth date, gender, address, SSN, etc.  </p>
+
+<p>NOTE:  It is recommended to collect the SSN (Social Security Number) of the applicant at the end of the application, because it is sensitive information, many people may abandon the application if asked too early in the flow.</p>
+<h3 id='query-paramters'>Query Paramters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>birth_date</td>
+<td>true</td>
+<td>Birth date in format YYYY-MM-DD</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>true</td>
+<td>&quot;male&quot; or &quot;female&quot;</td>
+</tr>
+<tr>
+<td>height_feet</td>
+<td>true</td>
+<td>Feet part of height</td>
+</tr>
+<tr>
+<td>height_inches</td>
+<td>true</td>
+<td>Inches part of height</td>
+</tr>
+<tr>
+<td>weight</td>
+<td>true</td>
+<td>Weight in lbs</td>
+</tr>
+<tr>
+<td>address_1</td>
+<td>true</td>
+<td>address line 1</td>
+</tr>
+<tr>
+<td>address_2</td>
+<td>false</td>
+<td>address line 2</td>
+</tr>
+<tr>
+<td>city</td>
+<td>true</td>
+<td>address city</td>
+</tr>
+<tr>
+<td>state</td>
+<td>true</td>
+<td>The 2-character abbreviation of the US state</td>
+</tr>
+<tr>
+<td>postal_code</td>
+<td>true</td>
+<td>The 5 digit postal code</td>
+</tr>
+<tr>
+<td>ssn</td>
+<td>true</td>
+<td>The 9 digit social security number</td>
+</tr>
+</tbody></table>
+<h3 id='return-values-2'>Return Values</h3>
+<p>The call will receive a JSON object with the <code>application_id</code> and the status on the completed sections.  If a completed section is <code>false</code>, it will need to be completed before <code>state</code> will be go from <code>imcomplete</code> to <code>ready_to_submit</code>.</p>
+<h2 id='policy-section'>Policy Section</h2>
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/policy_section</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/:application_id/policy_section <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "term": 2,
+    "face_value": 50000
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/policy_section</code></p>
+
+<p>In this section, you will use the <code>application_id</code> and submit the policy information that the customer is interested in buying.  These include the face value of the policy (the amount paid on disbursement) and the term of the policy in years</p>
+<h3 id='query-parameters-2'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>face_value</td>
+<td>true</td>
+<td>The dollar amount of the life insurance policy</td>
+</tr>
+<tr>
+<td>term</td>
+<td>true</td>
+<td>The length of the life insurance policy in years</td>
+</tr>
+</tbody></table>
+<h3 id='return-values-3'>Return Values</h3>
+<p>The call will receive a JSON object with the <code>application_id</code> and the status on the completed sections.  If a completed section is <code>false</code>, it will need to be completed before <code>state</code> will be go from <code>imcomplete</code> to <code>ready_to_submit</code>.</p>
+<h2 id='beneficiaries-section'>Beneficiaries Section</h2>
+<p>Beneficiaries are the people eligible to receive the distributions of the life insurance policy.</p>
+
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/beneficiaries_section</code></p>
+
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/beneficiaries_section</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/beneficiaries <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'[
+    {
+      "first_name": "Lois",
+      "last_name": "Lane",
+      "relationship": "spouse",
+      "percentage": 50
+    },
+    {
+      "first_name": "Martha",
+      "last_name": "Kent",
+      "relationship": "parent",
+      "percentage": 50
+    }
+]
+'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='query-parameters-3'>Query Parameters</h3>
+<p>Pass in a JSON array of Beneficiary objects.  Each object should have the following properties.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>first_name</td>
+<td>true</td>
+<td>The first name of the beneficiary</td>
+</tr>
+<tr>
+<td>last_name</td>
+<td>true</td>
+<td>The last name of the beneficiary</td>
+</tr>
+<tr>
+<td>relationship</td>
+<td>true</td>
+<td>one of [spouse, domestic partner, child, parent, fiance, sibling, grandparent]</td>
+</tr>
+<tr>
+<td>percentage</td>
+<td>true</td>
+<td>The percentage of the eligible disbursement</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+All beneficiary percentages must sum to 100
+</aside>
+<h3 id='return-values-4'>Return Values</h3>
+<p>The call will receive a JSON object with the <code>application_id</code> and the status on the completed sections.  If a completed section is <code>false</code>, it will need to be completed before <code>state</code> will be go from <code>imcomplete</code> to <code>ready_to_submit</code>.</p>
+<h2 id='billing-section'>Billing Section</h2>
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/billing_section</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/:application_id/billing_section <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "card_number": "424242424242",
+    "card_expiration_date": "02/2020"
+    "card_cvc": 123
+}
+'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"incomplete"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/billing_section</code></p>
+
+<p>In this section, you will use the <code>application_id</code> and submit the policy information that the customer is interested in buying.  These include the face value of the policy (the amount paid on disbursement) and the term of the policy in years</p>
+<h3 id='query-parameters-4'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>card_number</td>
+<td>true</td>
+<td>The 16-digit credit card number as a <code>string</code></td>
+</tr>
+<tr>
+<td>card_expiration_date</td>
+<td>true</td>
+<td>The expiration date of the card in format &quot;MM/YYYY&quot;</td>
+</tr>
+<tr>
+<td>card_cvc</td>
+<td>true</td>
+<td>The 3 digit CVC on the card</td>
+</tr>
+</tbody></table>
+<h3 id='return-values-5'>Return Values</h3>
+<p>The call will receive a JSON object with the <code>application_id</code> and the status on the completed sections.  If a completed section is <code>false</code>, it will need to be completed before <code>state</code> will be go from <code>imcomplete</code> to <code>ready_to_submit</code>.</p>
+<h2 id='medical-section'>Medical Section</h2>
+<p>In this section, the applicant will need to answer between 7 and 20 questions.  The required questions may change depending on the answers the applicant gives.  For example, if an applicant has diabetes, there will be more questions asked to clairfy the conditions around their diabetes.  </p>
+
+<p>When starting the medical section, the API user will send a request for the first question, Bestow will reply with the question and possible answers, and then the API user will then ask the applicant, submit the answer and receive the next question.  Because of the dynamic nature of the questions, Bestow will give the API user one question at a time until we are done with the section.</p>
+
+<p>The API user will use the following 2 routes:</p>
+
+<p><code>GET https://api.hellobestow.com/v2/applications/:application_id/medical_section/next_question</code></p>
+
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/medical_section/answer_question</code></p>
+<h3 id='requesting-the-first-question'>Requesting the first question</h3>
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>GET https://api.hellobestow.com/v2/applications/:application_id/medical_section/next_question</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X GET <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/medical_section/next_question <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> 
+<span class="s1">'
+</span></code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"next_question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"zxvzkjaIUHdg2ga42"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In the past 3 months, have you unintentionally lost more than 20 pounds?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single choice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Yes"</span><span class="p">,</span><span class="w"> </span><span class="s2">"No"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Making an API call will retrieve the first question.</p>
+
+<p><code>GET https://api.hellobestow.com/v2/applications/:application_id/medical_section/next_question</code></p>
+<h4 id='query-parameters-5'>Query Parameters</h4>
+<p>None</p>
+<h4 id='return-values-6'>Return Values</h4>
+<p>The call will receive a JSON object with <code>application_id</code>, as well as a <code>next_question</code> object will will have the <code>question_id</code> you will use in the next call, and the parameters of the question to ask the applicant.</p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>question_text</td>
+<td>The text of the question you must ask the applicant</td>
+</tr>
+<tr>
+<td>choices</td>
+<td>An array of eligible answers that the applicant can select</td>
+</tr>
+<tr>
+<td>answer_type</td>
+<td>The type of answer expected.  Will either be [&quot;single choice&quot;, &quot;multiple choice&quot;, &quot;text&quot;]</td>
+</tr>
+</tbody></table>
+
+<hr>
+<h3 id='answering-a-question'>Answering A Question</h3>
+<p>The <code>application_id</code> and <code>question_id</code> will be passed into the API request, along with the applicant&#39;s answer, in order to answer a question.</p>
+
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/medical_section/answer_question</code></p>
+
+<blockquote>
+<hr>
+
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/medical_section/answer_question</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/4asvn9482haSDf28a/medical_section/answer_question <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> <span class="se">\</span>
+  -d <span class="s1">'{
+    "question_id": "zxvzkjaIUHdg2ga42",
+    "answer": "No"
+  }
+'</span>
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"answer_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nkasdu489ax082d"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"next_question"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"question_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"48398asdfjhkajshdfquegkj"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"question_text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"In the past 12 months, have you used any tobacco or nicotine products (Excluding less than 24 cigars)"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"answer_type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"single choice"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"choices"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"Yes"</span><span class="p">,</span><span class="w"> </span><span class="s2">"No"</span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre><h3 id='query-parameters-6'>Query Parameters</h3>
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>question_id</td>
+<td>true</td>
+<td>The ID of the question given to the API user in <code>/next_question</code></td>
+</tr>
+<tr>
+<td>answer</td>
+<td>true</td>
+<td>The applicant&#39;s answer.  May either be a <code>string</code> or an <code>array</code> in the case that it is multiple choice</td>
+</tr>
+</tbody></table>
+<h3 id='return-values-7'>Return values</h3>
+<p>The call will receive a JSON object with <code>application_id</code>, as well as a <code>next_question</code> object will will have the <code>question_id</code> you will use in the next call, and the parameters of the question to ask the applicant.</p>
+
+<hr>
+<h3 id='when-all-questions-are-answered'>When all questions are answered</h3>
+<p>When there are no futher questions, a call to <code>/answer_question</code> will return with <code>next_question</code> being null.</p>
+
+<p><code>
+{
+  &quot;application_id&quot;: &quot;4asvn9482haSDf28a&quot;,
+  &quot;answer_id&quot;: &quot;f48sh084h2oiaddo8&quot;,
+  &quot;next_question&quot;: null
+}
+</code></p>
+
+<p>The <code>medical_section</code> will then be complete.</p>
+<h2 id='lifestyle-section'>Lifestyle Section</h2>
+<p><strong><em>This is identical to the medical section with a different set of questions</em></strong></p>
+<h2 id='submitting-the-application'>Submitting The Application</h2>
+<blockquote>
+<p>Endpoint URL</p>
+
+<p><strong>POST https://api.hellobestow.com/v2/applications/:application_id/submit</strong></p>
+
+<p>Example Request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>
+curl -X POST <span class="se">\</span>
+  https://api.hellobestow.com/v2/applications/:application_id/submit <span class="se">\</span>
+  -H <span class="s1">'Authorization: 82zZIHeBqUlBtICMX5li'</span> <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'Accept:application/json'</span> <span class="se">\</span>
+  -H <span class="s1">'cache-control: no-cache'</span> 
+</code></pre>
+<blockquote>
+<p>Example Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"application_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4asvn9482haSDf28a"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"state"</span><span class="p">:</span><span class="w"> </span><span class="s2">"submitted"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"completed_sections"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="s2">"personal"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"policy"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"billing"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"beneficiaries"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"medical"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"lifestyle"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"followup"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>When the application has all sections complete and <code>&quot;state&quot;: &quot;ready_to_submit&quot;</code>, submit the application by calling the endpoint</p>
+
+<p><code>POST https://api.hellobestow.com/v2/applications/:application_id/submit</code> </p>
+<h2 id='follow-up-section'>Follow-up Section</h2>
+<p>TODO: After submitting the application, Bestow will run internal checks in order to determine eligibility for approval.  After this process, it may be necessary to ask follow-up questions to the applicant.</p>
+<h2 id='outstanding-questions-for-internal-discussion'>Outstanding Questions (for internal discussion)</h2>
+<p>Will the API user need to submit a field for </p>
+
+<ol>
+<li>Accept Terms of Service</li>
+<li>Agree to Bestow running 3rd party data checks against applicant</li>
+<li>HIPAA authorization of applicant</li>
+</ol>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
